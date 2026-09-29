@@ -1,0 +1,17 @@
+[project]
+name = "offlinedemo"
+version = "0.1.0"
+description = "Easy demonstration of models by offlineisbetter."
+readme = "README.md"
+authors = [
+    { name = "offlineisbetter", email = "dev@offlineisbetter.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+offlinedemo = "offlinedemo:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
