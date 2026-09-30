@@ -3,11 +3,12 @@
 
 from pathlib import Path
 import json
+import os
 import sys
 import time
 
 import numpy as np
-from transformers import AutoTokenizer
+from tokenizers import Tokenizer
 import onnxruntime as ort
 
 def main():
@@ -30,10 +31,7 @@ def main():
     classes = {v: k for k, v in classes.items()}
 
     # Load tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(
-        checkpoint,
-        local_files_only = True,
-    )
+    tokenizer = Tokenizer.from_file(str(checkpoint / "tokenizer.json"))
     print("Tokenizer loaded!")
     print()
 
@@ -42,7 +40,11 @@ def main():
     
     # Tokenize and run inference
     start = time.perf_counter()
-    tokens = tokenizer(user_input)
+    encoded = tokenizer.encode(user_input)
+    tokens = {
+        "input_ids": np.array(encoded.ids),
+        "attention_mask": np.array(encoded.attention_mask),
+    }
     result = session.run(None, tokens)[0][0]
     idx = int(np.argmax(result))
     c = classes[idx]
