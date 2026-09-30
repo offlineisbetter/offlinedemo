@@ -11,6 +11,10 @@ import numpy as np
 from tokenizers import Tokenizer
 import onnxruntime as ort
 
+OPT = ort.SessionOptions()
+OPT.intra_op_num_threads = 1
+OPT.inter_op_num_threads = 1
+
 def main():
     # Get checkpoint name
     if len(sys.argv) < 2:
@@ -21,6 +25,7 @@ def main():
     # Load checkpoint
     session = ort.InferenceSession(
         checkpoint / "model.onnx",
+        OPT,
         providers=["CPUExecutionProvider"],
     )
     print("Model loaded!")
