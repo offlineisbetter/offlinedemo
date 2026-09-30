@@ -14,7 +14,7 @@ try our first model yourself. our first model is a small (230m) text model for s
 pip install offlinedemo
 ```
 
-download the model archive from the website and unpack the model.
+download the model archive from the releases page of this repo and unpack the model.
 
 ```bash
 tar -xvf offline-sentiment-small.tar
