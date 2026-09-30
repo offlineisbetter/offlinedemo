@@ -28,11 +28,14 @@ offlinedemo offline-sentiment-small
 
 ## benchmarks
 
+below are benchmarks for `offline-sentiment-small` on binary sentiment classification using the [stanfordnlp/sst2](https://huggingface.co/datasets/stanfordnlp/sst2) validation set. all benchmarks were completed on the ryzen 9950x3d cpu on one thread.
+
 | model | parameters | p95 (ms) | f1 (validation) |
 |:---:|:---:|:---:|:---:|
 | `offline-sentiment-small` | 230m | 80.32 | 0.9489 |
 | `distilbert-base` | 67m | 66.15 | 0.9321 |
-| `roberta-base` | 
+| `roberta-base` | 125m | 469.65 | 0.9396 |
+| `modernbert-base` | 149m | 530.73 | 0.9396 |
 
 ## philosophy
 
