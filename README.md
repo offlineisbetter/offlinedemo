@@ -30,6 +30,8 @@ offlinedemo offline-sentiment-small
 
 below are benchmarks for `offline-sentiment-small` on binary sentiment classification using the [stanfordnlp/sst2](https://huggingface.co/datasets/stanfordnlp/sst2) validation set. all benchmarks were completed on the ryzen 9950x3d cpu on one thread.
 
+critically: _we only allowed 5 minutes of setup time_ for each model. our focus is on improving the developer's experience and reducing headache! that means that `*bert` models were used in their original form (`torch`), as downloaded from hugging face, as was ours (`onnx`). this is _not an apples-to-apples comparison_ in the same runtime, and that's intentional.
+
 | model | parameters | p95 (ms) | f1 (validation) |
 |:---:|:---:|:---:|:---:|
 | `offline-sentiment-small` | 230m | 80.32 | 0.9489 |
