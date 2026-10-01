@@ -42,3 +42,7 @@ critically: _we only allowed 5 minutes of setup time_ for each model. our focus 
 ## philosophy
 
 succinctly, the core philosophy of _offlineisbetter_ is that parameter-efficient and low-latency models should be easily accessible to everybody. of course hugging face and `transformers.pipeline` allows you to run sentiment analysis in three lines of python, but for more parameter-efficient models, already quantized and with optimized computation graphs.
+
+## license
+
+the source code in this repository, as well as all parameters released through github releases, are under the mit license. see `LICENSE` for more information.
