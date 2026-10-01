@@ -45,4 +45,4 @@ succinctly, the core philosophy of _offlineisbetter_ is that parameter-efficient
 
 ## license
 
-the source code in this repository is under the mit license. parameters are finetuned from [liquid ai][https://liquid.ai] pretrained models, and therefore are subject to the lfm open license. see `LICENSE` for more information.
+the source code in this repository is under the mit license. parameters are finetuned from [liquid ai](https://liquid.ai) pretrained models, and therefore are subject to the lfm open license. see `LICENSE` for more information.
